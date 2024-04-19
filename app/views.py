@@ -299,6 +299,7 @@ class PostInventory(APIView):
             return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
         
         # Extracting data from request
+        inventory_name = request.data.get('inventory_name')
         inventory_location = request.data.get('inventory_location')
         fiscal_year = request.data.get('fiscal_year')
         currency = request.data.get('currency')
@@ -308,6 +309,7 @@ class PostInventory(APIView):
         # Creating instance of Inventory model
         inventory_instance = Inventory.objects.create(
             user=user_instance,
+            inventory_name=inventory_name,
             inventory_location=inventory_location,
             fiscal_year=fiscal_year,
             currency=currency,
