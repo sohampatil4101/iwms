@@ -14,7 +14,7 @@ class warehouseuser(models.Model):
     phone_no = models.IntegerField()
     country = models.TextField()
     state = models.TextField()
-    terms_conditions = models.BooleanField(default=False,null=False)
+    terms_conditions = models.BooleanField(default=True,null=False)
 
     def __str__(self):
         return f"{self.companyname}"

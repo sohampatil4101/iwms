@@ -31,7 +31,7 @@ def hash_password(password):
 
 
 def getuserinstance(jwttoken):
-    token_data = jwt.decode(jwttoken, "secret", do_time_check=True)
+    token_data = jwt.decode(jwttoken, "secret", algorithms=['HS256'], do_time_check=True)
     user_id = token_data.get('id')
     user_instance = warehouseuser.objects.get(pk=user_id)
     return user_instance
