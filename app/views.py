@@ -216,29 +216,14 @@ class Postadditem(APIView):
         # Assuming item_image is uploaded separately
         item_image = request.FILES.get('item_image')
         item_name = request.data.get('item_name')
-        item_sku = request.data.get('item_sku')
         item_unit = request.data.get('item_unit')
-        item_sac = request.data.get('item_sac')
         returnable_item = request.data.get('returnable_item', False)
-        HSN_code = request.data.get('HSN_code')
-        taxable = request.data.get('taxable', False)
-        exemptional_reason = request.data.get('exemptional_reason')
-        sales_info = request.data.get('sales_info', False)
         selling_price = request.data.get('selling_price')
         sales_account = request.data.get('sales_account')
         sales_description = request.data.get('sales_description')
-        purchase_info = request.data.get('purchase_info', False)
         cost_price = request.data.get('cost_price')
         purchase_account = request.data.get('purchase_account')
         purchase_description = request.data.get('purchase_description')
-        intrastate_tax = request.data.get('intrastate_tax')
-        interstate_tax = request.data.get('interstate_tax')
-        track_inventory = request.data.get('track_inventory', False)
-        inventory_account = request.data.get('inventory_account')
-        opening_stock = request.data.get('opening_stock')
-        opening_stock_rate_per_unit = request.data.get('opening_stock_rate_per_unit')
-        reorder_level = request.data.get('reorder_level')
-        preferred_vendor = request.data.get('preferred_vendor')
         dimension = request.data.get('dimension')
         weight = request.data.get('weight')
         manifacturer = request.data.get('manifacturer')
@@ -254,29 +239,14 @@ class Postadditem(APIView):
             item_type=item_type,
             item_image=item_image,
             item_name=item_name,
-            item_sku=item_sku,
             item_unit=item_unit,
-            item_sac=item_sac,
             returnable_item=returnable_item,
-            HSN_code=HSN_code,
-            taxable=taxable,
-            exemptional_reason=exemptional_reason,
-            sales_info=sales_info,
             selling_price=selling_price,
             sales_account=sales_account,
             sales_description=sales_description,
-            purchase_info=purchase_info,
             cost_price=cost_price,
             purchase_account=purchase_account,
             purchase_description=purchase_description,
-            intrastate_tax=intrastate_tax,
-            interstate_tax=interstate_tax,
-            track_inventory=track_inventory,
-            inventory_account=inventory_account,
-            opening_stock=opening_stock,
-            opening_stock_rate_per_unit=opening_stock_rate_per_unit,
-            recorder_level=reorder_level,
-            preferred_vendor=preferred_vendor,
             dimension=dimension,
             weight=weight,
             manifacturer=manifacturer,
@@ -287,7 +257,6 @@ class Postadditem(APIView):
             isbn=isbn
         )
         
-        # Optionally, you can perform additional validations or operations here
         
         return HttpResponse("done")
 
