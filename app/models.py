@@ -82,7 +82,6 @@ class Inventory(models.Model):
     language = models.TextField()
     inventory_startdate = models.TextField()
     
-# class Sal
 
 
 class General(models.Model):
