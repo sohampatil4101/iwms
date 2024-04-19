@@ -113,7 +113,6 @@ class Registeruser(GenericAPIView):
             phone_no = serializer.validated_data.get('phone_no')
             country = serializer.validated_data.get('country')
             state = serializer.validated_data.get('state')
-            terms_conditions = serializer.validated_data.get('terms_conditions')
 
             # Create user object
             user = warehouseuser.objects.create(
@@ -124,7 +123,6 @@ class Registeruser(GenericAPIView):
                 phone_no=phone_no,
                 country=country,
                 state=state,
-                terms_conditions=terms_conditions
             )
 
             # Generate token for the user
