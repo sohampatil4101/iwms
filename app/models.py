@@ -75,12 +75,14 @@ class Additem(models.Model):
 
 class Inventory(models.Model):
     user = models.ForeignKey(warehouseuser,on_delete=models.CASCADE)
+    inventory_name = models.TextField()
     inventory_location = models.TextField()
     fiscal_year = models.TextField()
     currency = models.TextField()
     language = models.TextField()
     inventory_startdate = models.TextField()
     
+# class Sal
 
 
 class General(models.Model):
