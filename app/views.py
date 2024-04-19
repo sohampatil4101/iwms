@@ -214,7 +214,6 @@ class Postadditem(APIView):
         # Extracting data from request
         item_type = request.data.get('item_type')
         # Assuming item_image is uploaded separately
-        item_image = request.FILES.get('item_image')
         item_name = request.data.get('item_name')
         item_unit = request.data.get('item_unit')
         returnable_item = request.data.get('returnable_item', False)
@@ -237,7 +236,6 @@ class Postadditem(APIView):
         add_item_instance = Additem.objects.create(
             user=user_instance,
             item_type=item_type,
-            item_image=item_image,
             item_name=item_name,
             item_unit=item_unit,
             returnable_item=returnable_item,
